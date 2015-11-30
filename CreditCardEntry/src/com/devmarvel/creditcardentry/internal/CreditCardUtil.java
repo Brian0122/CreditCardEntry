@@ -109,6 +109,14 @@ public class CreditCardUtil {
 			gaps.add("");
 			segmentLengths[2] = 0;
 			break;
+		case JCB: // {4-4-4-4}
+			gaps.add(" ");
+			segmentLengths[0] = 4;
+			gaps.add(" ");
+			segmentLengths[1] = 4;
+			gaps.add(" ");
+			segmentLengths[2] = 4;
+			break;
 		default:
 			return enteredNumber;
 		}

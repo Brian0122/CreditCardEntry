@@ -13,12 +13,14 @@ class CardRegex {
     static final String REGX_AMEX = "^3[47][0-9]{13}$"; // AMEX 15
     static final String REGX_DISCOVER = "^6(?:011|5[0-9]{2})[0-9]{12}$"; // Discover 16
     static final String REGX_DINERS_CLUB = "^3(?:0[0-5]|[68][0-9])[0-9]{11}$"; // DinersClub 14
+    static final String REGX_JCB = "^(?:2131|1800|35\\d{3})\\d{11})$";
 
     static final String REGX_VISA_TYPE = "^4[0-9]{3}?"; // VISA 16
     static final String REGX_MC_TYPE = "^5[1-5][0-9]{2}$"; // MC 16
     static final String REGX_AMEX_TYPE = "^3[47][0-9]{2}$"; // AMEX 15
     static final String REGX_DISCOVER_TYPE = "^6(?:011|5[0-9]{2})$"; // Discover 16
     static final String REGX_DINERS_CLUB_TYPE = "^3(?:0[0-5]|[68][0-9])[0-9]$"; // DinersClub
+    static final String REGX_JCB_TYPE = "^(?:2131|1800|35[0-9]{2})";
 }
 
 /**
@@ -29,7 +31,8 @@ public enum CardType implements Serializable {
     MASTERCARD("MasterCard", R.drawable.master_card, CardRegex.REGX_MC, CardRegex.REGX_MC_TYPE),
     AMEX("American Express", R.drawable.amex, CardRegex.REGX_AMEX, CardRegex.REGX_AMEX_TYPE),
     DISCOVER("Discover", R.drawable.discover, CardRegex.REGX_DISCOVER, CardRegex.REGX_DISCOVER_TYPE),
-    INVALID("Unknown", R.drawable.unknown_cc, null, null);
+    INVALID("Unknown", R.drawable.unknown_cc, null, null),
+    JCB("JCB", R.drawable.jcb, CardRegex.REGX_JCB, CardRegex.REGX_JCB_TYPE);
 
   /** name for humans */
     public final String name;
